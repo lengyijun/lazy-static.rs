@@ -6,14 +6,14 @@
 // copied, modified, or distributed except according to those terms.
 
 extern crate core;
-extern crate std;
+// extern crate std;
 
-use self::std::prelude::v1::*;
-use self::std::cell::Cell;
-use self::std::hint::unreachable_unchecked;
-use self::std::sync::Once;
+use std::prelude::v1::*;
+use std::cell::Cell;
+use std::hint::unreachable_unchecked;
+use std::sync::Once;
 #[allow(deprecated)]
-pub use self::std::sync::ONCE_INIT;
+pub use std::sync::ONCE_INIT;
 
 // FIXME: Replace Option<T> with MaybeUninit<T> (stable since 1.36.0)
 pub struct Lazy<T: Sync>(Cell<Option<T>>, Once);
